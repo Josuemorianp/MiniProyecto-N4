@@ -19,14 +19,8 @@ class AsistenciaFactory extends Factory
     public function definition()
     {
         return [
-            'id_alumno' => function(){
-                return alumno::factory()->create()->id;
-            },
-
-            'id_curso' => function(){
-                return curso::factory()->create()->id;
-            },
-            
+            'id_curso'=> curso::inRandomOrder()->first()->id,
+            'id_alumno'=> alumno::inRandomOrder()->first()->id,    
             'fecha'=> $this->faker->date,
             'asistencia'=> $this->faker->randomElement(['A','T','F']),
         ];

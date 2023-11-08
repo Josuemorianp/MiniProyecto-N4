@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo');
-            $table->integer('dni');
             $table->timestamps('');
         });
     }

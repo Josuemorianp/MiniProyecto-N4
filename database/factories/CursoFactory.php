@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\alumno;
+use App\Models\curso;
+use App\Models\maestro;
+use App\Models\materias;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +20,10 @@ class CursoFactory extends Factory
      */
     public function definition()
     {
+
         return [
-            "id_alumno"=> \App\Models\alumno::factory(),
-            "id_materia"=> \App\Models\materias::factory(),
+            'id_alumno'=> alumno::inRandomOrder()->first()->id,
+            'id_materia'=> materias::inRandomOrder()->first()->id,
         ];
     }
 }

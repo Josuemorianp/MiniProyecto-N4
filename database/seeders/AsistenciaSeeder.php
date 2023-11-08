@@ -13,8 +13,8 @@ class AsistenciaSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        asistencia::factory()->count(10)->create();
+        asistencia::factory(10)->create();
     }
 }

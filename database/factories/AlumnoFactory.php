@@ -21,7 +21,7 @@ class AlumnoFactory extends Factory
             'apellido'=>$this->faker->lastName(),
             'telefono'=>$this->faker->phoneNumber(),
             'direccion'=>$this->faker->address(),
-            'correo'=>$this->faker->safeEmail()
+            'correo'=>$this->faker->safeEmail(),
         ];
     }
 }

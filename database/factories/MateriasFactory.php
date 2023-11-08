@@ -17,12 +17,11 @@ class MateriasFactory extends Factory
      */
     public function definition()
     {
-        $maestro = maestro::all();
 
         return [
-            'nombre'=>$this->faker->name(),
-            'uni_credito'=>$this->faker->randomNumber(),
-            'id_maestro'=>$this->faker->randomElement($maestro)->id,
+            'nombre'=>$this->faker->randomElement(['Algebra', 'Logica de Programación', 'Organización y Sistemas', 'Ingles', 'Literatura', 'Habilidades de Investigación', 'Educación Fisica', 'Programación']),
+            'uni_credito'=>$this->faker->randomNumber(1, 3),
+            'id_maestro'=> maestro::inRandomOrder()->first()->id,
         ];
     }
 }
